@@ -8,7 +8,7 @@ const SearchBar = () => {
     <div className='search__input__container'>
       <input type="text" placeholder='starting typing..' onChange={(e) => setStoreWord(e.target.value)}/>
 
-      <span onClick={() => searchWord()}>O</span>
+      <button onClick={() => searchWord()}>O</button>
     </div>
   )
 }

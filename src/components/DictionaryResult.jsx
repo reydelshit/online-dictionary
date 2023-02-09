@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MainContext } from '../context/MainContext'
+import Meaning from './secondary/Meaning';
 
 import Title from './secondary/Title'
 
 const DictionaryResult = () => {
+
+  const {showError} = useContext(MainContext);
+
+  // console.log(errorMessage)
   return (
     <div>
-      <Title />
+      {showError ? <div>ERROR SIR</div> : 
+      <>
+        <Title />
+        <Meaning />
+      </>}
     </div>
   )
 }

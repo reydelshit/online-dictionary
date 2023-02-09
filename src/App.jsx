@@ -7,10 +7,10 @@ import { MainContext } from "./context/MainContext";
 
 function App() {
 
-  const {setStoreWord, searchWord, storeMeaning} = useDictionary();
+  const {setStoreWord, searchWord, storeMeaning, showError} = useDictionary();
 
   return (
-    <MainContext.Provider value={{setStoreWord, searchWord, storeMeaning}}>
+    <MainContext.Provider value={{setStoreWord, searchWord, storeMeaning, showError}}>
       <div className="app">
         <Header />
         <SearchBar />

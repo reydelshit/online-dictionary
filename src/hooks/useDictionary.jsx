@@ -8,35 +8,47 @@ const useDictionary = () => {
 
   const [runSearch, setRunSearch] = useState(false);
 
+  // const [errorMessage, setErrorMessage] = useState(false)
+  const [showError, setshowError] = useState(false)
+
 
   useEffect(() => {
 
     try{
       const fetchWordToDetermineMeaning = async () => {
         const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${storeWord}`);
-        const data = await fetchData.json();
-  
-        setStoreMeaning(data);
-        console.log(storeMeaning);
-        
+
+
+        if(fetchData.status !== 200){
+          setshowError(true)
+          console.log('not 2022')
+          return;
+        }
+
+          const data = await fetchData.json();
+          setStoreMeaning(data);
+          console.log(data)
+
+          setshowError(false)
       }
 
       fetchWordToDetermineMeaning();
 
   
     } catch(error){
-      setStoreMeaning('error')
+      // setErrorMessage('ERRORRRRRRRRRRRRRRRRRRRRRRRRRR')
     }
-    
-
+ 
   }, [runSearch])
   
 
   const searchWord = () => {
     setRunSearch(!runSearch)
+    console.log(storeWord)
+
   }
 
-  return {setStoreWord, searchWord, storeMeaning}
+  return {setStoreWord, searchWord, storeMeaning, showError}
 }
 
 export default useDictionary

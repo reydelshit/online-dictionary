@@ -117,7 +117,7 @@ header .selectFonts__container{
 
 
 
-.search__input__container span{
+.search__input__container button{
   position: absolute;
   right: 5px;
   cursor: pointer;

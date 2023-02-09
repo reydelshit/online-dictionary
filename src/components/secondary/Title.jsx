@@ -7,24 +7,24 @@ const Title = () => {
 
     const {storeMeaning} = useContext(MainContext);
 
-
   return (
-    <div>
-        {storeMeaning.map((meaning, index) => {
-            return (
-                <div key={index}>
-                    <h1>{meaning.word}</h1>
-                    <p>{meaning.phonetic}</p>
+    <>
+            {storeMeaning && storeMeaning.map((meaning, index) => {
+                const pronunciation = meaning.phonetics.find(p => p.audio);
+                const phonetic = meaning.phonetics.find(p => p.text);
 
 
-                    <div>
-                        he
-                        <audio src="https://api.dictionaryapi.dev/media/pronunciations/en/result-us.mp3"></audio>
+                return (
+                    <div key={index}>
+                        <h1>{meaning.word}</h1>
+                        <p>{phonetic.text}</p>
+
+                        <audio controls src={`${pronunciation.audio}`}></audio>
                     </div>
-                </div>
-            )
-        })}
-    </div>
+                )
+            })
+            }  
+    </>
   )
 }
 
