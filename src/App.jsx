@@ -5,12 +5,19 @@ import useDictionary from "./hooks/useDictionary";
 
 import { MainContext } from "./context/MainContext";
 
+
+
+// images 
+import audioIcon from './assets/audio.svg';
+import searchIcon from './assets/search.svg'
+import arrowDown from './assets/arrow.svg'
+
 function App() {
 
   const {setStoreWord, searchWord, storeMeaning, showError} = useDictionary();
 
   return (
-    <MainContext.Provider value={{setStoreWord, searchWord, storeMeaning, showError}}>
+    <MainContext.Provider value={{setStoreWord, searchWord, storeMeaning, showError, audioIcon, searchIcon, arrowDown}}>
       <div className="app">
         <Header />
         <SearchBar />

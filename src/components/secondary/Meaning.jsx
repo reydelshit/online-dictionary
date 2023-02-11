@@ -10,26 +10,28 @@ const Meaning = () => {
 
   return (
     <div>
-        {storeMeaning && storeMeaning.map((he, index) => {
+        {storeMeaning && storeMeaning.slice(0, 1).map((he, index) => {
             
             return (
-                <div key={index}>
+                <div className='meaning__container' key={index}>
                     {he.meanings.map((hes, index) => {
 
                         const {definitions, synonyms, antonyms, partOfSpeech} = hes;
                         return (
-                            <div key={index}>
+                            <div className='individual__meaning' key={index}>
                                 <h1>{partOfSpeech}</h1>
 
                                 <span>meanings</span>
+
+                                <ul className='individual__meaning__container' key={index}>
                                 {definitions.map((def, index) => {
                                     const {definition, synonyms, antonyms, examples} = def
                                     return (
-                                        <div key={index}>
-                                            <p>{definition}</p>
-                                        </div>
+                                        <li key={index}>{definition}</li>
                                     )
                                 })}
+                                 </ul>
+
                             </div>
                         )
                     })}

@@ -12,10 +12,10 @@ const DictionaryResult = () => {
   return (
     <div>
       {showError ? <div>ERROR SIR</div> : 
-      <>
+      <div>
         <Title />
         <Meaning />
-      </>}
+      </div>}
     </div>
   )
 }
