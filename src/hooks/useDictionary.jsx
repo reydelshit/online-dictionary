@@ -48,7 +48,7 @@ const useDictionary = () => {
 
   }
 
-  return {setStoreWord, searchWord, storeMeaning, showError}
+  return {setStoreWord, searchWord, storeMeaning, showError, storeWord}
 }
 
 export default useDictionary

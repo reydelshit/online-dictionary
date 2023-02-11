@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { MainContext } from '../context/MainContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Header = () => {
 
@@ -7,8 +8,13 @@ const Header = () => {
   const [selectedFont, setSelectedFont] = useState('Sans Serif');
   const [openSelection, setOpenSelection] = useState(false)
 
-  const {arrowDown} = useContext(MainContext);
+  const {arrowDown, moon, sun} = useContext(MainContext);
 
+  const {theme, setTheme} = useContext(ThemeContext)
+
+  const toggleTheme = () => {
+    setTheme((current) => current === "light" ? "darl" : "light")
+  }
 
   return (
     <header>
@@ -25,7 +31,9 @@ const Header = () => {
           }
 
           <div>
-            <button>dark</button>
+            <button onClick={toggleTheme}>
+              {theme === 'light' ? <img src={moon} alt="moon" /> : <img src={sun} alt="sun" />}
+            </button>
           </div>
         </div>
 

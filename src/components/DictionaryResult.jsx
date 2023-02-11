@@ -6,17 +6,24 @@ import Title from './secondary/Title'
 
 const DictionaryResult = () => {
 
-  const {showError} = useContext(MainContext);
+  const {showError, storeWord} = useContext(MainContext);
 
   // console.log(errorMessage)
+
+  
+
   return (
     <div>
-      {showError ? <div>ERROR SIR</div> : 
-      <div>
-        <Title />
-        <Meaning />
+     {storeWord === null ? <div className='default__result'>Hi, you can search any word you want! 😁</div> : <div>
+        {showError ? <div>ERROR SIR</div> : 
+        <div>
+          <Title />
+          <Meaning />
+        </div>}
       </div>}
     </div>
+
+    
   )
 }
 

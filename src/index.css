@@ -56,12 +56,28 @@ header .header__container{
   /* border: 1px solid orange; */
 }
 
+header .header__container button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  /* border: 1px solid orange; */
+}
+
+header .header__container button img{
+  width: 1.5rem;
+
+  /* border: 1px solid orange; */
+}
+
 header .selectFonts__button{
+  width: 6rem;
   cursor: pointer;
 }
 
 
 header .selectFonts__button img{
+  /* position: absolute; */
   width: 0.6rem;
   margin-left: 0.5rem;
 }
@@ -69,10 +85,14 @@ header .selectFonts__button img{
 header .leftside__navigation{
   font-size: 0.8rem;
   width: 10rem;
+  padding: 0.5rem;
   /* height: 100%; */
   display: flex;
   position: relative;
   justify-content: space-between;
+  align-items: center;
+  text-align: right;
+
 
 
   /* border: 1px solid orange; */
@@ -81,19 +101,50 @@ header .leftside__navigation{
 header .selectFonts__container{
 
   width: 10rem;
-
+  height: 10rem;
   position: absolute;
   top: 50px;
-  right: 170px;
+  right: 80px;
   z-index: 5;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-
+  border-radius: 5px;
+  background-color: white;
+  border: 0.1px solid var(--gray);
+  box-shadow: hsla(210,8%,62%,.2) 0px 8px 24px;
 
   /* border: 1px solid green; */
 }
+
+header .selectFonts__container span{
+
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray);
+  cursor: pointer;
+
+  /* border: 1px solid green; */
+}
+
+header .selectFonts__container span:last-child{
+
+  text-align: center;
+  display: block;
+  /* border: 1px solid orange; */
+  width: 100%;
+  padding: 1rem;
+  border-bottom: none;
+  /* height: 100%; */
+
+  /* border: 1px solid green; */
+}
+
 
 
 
@@ -185,6 +236,21 @@ header .selectFonts__container{
 
 .dictionary__result__header button img{
   width: 5rem;
+}
+
+.default__result{
+
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--input-bg);
+  height: 8rem;
+  border-radius: 5px;
+
+  border: 1px solid var(--violet);
+
 }
 
 .meaning__container{
