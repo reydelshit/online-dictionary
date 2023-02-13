@@ -3,14 +3,9 @@ import React, {useEffect, useState} from 'react'
 const useDictionary = () => {
 
   const [storeWord, setStoreWord] = useState(null);
-
   const [storeMeaning, setStoreMeaning] = useState([]);
-
   const [runSearch, setRunSearch] = useState(false);
-
-  // const [errorMessage, setErrorMessage] = useState(false)
   const [showError, setshowError] = useState(false)
-
   const [showLoading, setShowLoading] = useState(false)
 
 
@@ -32,10 +27,9 @@ const useDictionary = () => {
 
 
         } catch(error){
-            // setErrorMessage('ERRORRRRRRRRRRRRRRRRRRRRRRRRRR')
             setShowLoading(false)
             setshowError(true)
-            console.log('error my ass')
+            // console.log('error my ass')
             
         }
       }

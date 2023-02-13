@@ -6,9 +6,7 @@ const Header = () => {
 
   const selectFonts = ['Inter', 'Roboto', 'Zeyada'];
   const [openSelection, setOpenSelection] = useState(false)
-
   const {selectedFont, setSelectedFont, arrowDown, moon, sun} = useContext(MainContext);
-
   const {theme, setTheme} = useContext(ThemeContext)
 
   const toggleTheme = () => {

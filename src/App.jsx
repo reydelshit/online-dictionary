@@ -18,7 +18,6 @@ import { useState } from "react";
 function App() {
 
   const [theme, setTheme] = useState('light');
-  // const [fonts, setFonts] = useState('Inter, sans-serif')
   const [selectedFont, setSelectedFont] = useState('Inter');
 
 
