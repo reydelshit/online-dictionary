@@ -1,45 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto:wght@300;400&family=Zeyada&display=swap');
 
 :root {
   --violet: rgb(164, 69, 237);
   --gray: rgb(117, 117, 117);
   --input-bg: #F4F4F4;
 
-  --primary--font-family: 'Inter', sans-serif;
-  --secondary--font-family: 'Roboto', sans-serif;
+  --Inter: 'Inter', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Zeyada: 'Zeyada', cursive;
+
+
 }
+
 
 *{
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  font-family: var(--primary--font-family);
 }
 
 
-body {
+.app {
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
   color: #242424;
 
   /* border: 1px solid orange; */
 }
 
+.dark{
+  background-color: #242424; 
+  color: #F4F4F4;
+}
+
+.dark .default__error, .default__result, .dictionary__result__header, .meaning__container, .selectFonts__container{
+  color: #242424;
+}
+
+.Inter{
+  font-family: var(--Inter);
+}
+
+.Roboto{
+  font-family: var(--Roboto);
+}
+
+.Zeyada{
+  font-family: var(--Zeyada);
+}
 
 
-.app{
+
+
+
+.main__container{
   display: block;
   width: 550px;
-  height: 100%;
+  height: 100vh;
   padding: 0.5em;
 
   /* border: 1px solid black; */
 
 }
+
+
 
 header{
   width: 100%;
@@ -238,7 +265,7 @@ header .selectFonts__container span:last-child{
   width: 5rem;
 }
 
-.default__result{
+.default__result, .default__error{
 
   display: flex;
   /* flex-direction: column; */
@@ -302,6 +329,27 @@ header .selectFonts__container span:last-child{
 
 
 
+/* looading  */
+.loading__screen_container{
+  width: 100%;
+  height: 8rem;
+  display: grid;
+  place-items: center;
 
+}
+.spinner {
+
+  width: 11.2px;
+  height: 11.2px;
+  animation: spinner-z355kx 1s infinite linear;
+  border-radius: 11.2px;
+  box-shadow: 28px 0px 0 0 #a445ed, 17.4px 21.8px 0 0 #a445ed, -6.2px 27.2px 0 0 #a445ed, -25.2px 12px 0 0 #a445ed, -25.2px -12px 0 0 #a445ed, -6.2px -27.2px 0 0 #a445ed, 17.4px -21.8px 0 0 #a445ed;
+}
+
+@keyframes spinner-z355kx {
+  to {
+     transform: rotate(360deg);
+  }
+}
 
 

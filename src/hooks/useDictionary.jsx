@@ -11,33 +11,37 @@ const useDictionary = () => {
   // const [errorMessage, setErrorMessage] = useState(false)
   const [showError, setshowError] = useState(false)
 
+  const [showLoading, setShowLoading] = useState(false)
+
 
   useEffect(() => {
 
-    try{
       const fetchWordToDetermineMeaning = async () => {
-        const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${storeWord}`);
+        try{
+            setshowError(false)
+            setShowLoading(true)
+          if(storeWord === null){
+            setShowLoading(false)
+          }
+            const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${storeWord}`);
+            const data = await fetchData.json();
+            setStoreMeaning(data);
+            setShowLoading(false)
+
+            console.log(data)
 
 
-        if(fetchData.status !== 200){
-          setshowError(true)
-          console.log('not 2022')
-          return;
+        } catch(error){
+            // setErrorMessage('ERRORRRRRRRRRRRRRRRRRRRRRRRRRR')
+            setShowLoading(false)
+            setshowError(true)
+            console.log('error my ass')
+            
         }
-
-          const data = await fetchData.json();
-          setStoreMeaning(data);
-          console.log(data)
-
-          setshowError(false)
       }
 
       fetchWordToDetermineMeaning();
 
-  
-    } catch(error){
-      // setErrorMessage('ERRORRRRRRRRRRRRRRRRRRRRRRRRRR')
-    }
  
   }, [runSearch])
   
@@ -48,7 +52,7 @@ const useDictionary = () => {
 
   }
 
-  return {setStoreWord, searchWord, storeMeaning, showError, storeWord}
+  return {setStoreWord, searchWord, storeMeaning, showError, storeWord, showLoading}
 }
 
 export default useDictionary

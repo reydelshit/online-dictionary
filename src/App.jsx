@@ -18,16 +18,21 @@ import { useState } from "react";
 function App() {
 
   const [theme, setTheme] = useState('light');
+  // const [fonts, setFonts] = useState('Inter, sans-serif')
+  const [selectedFont, setSelectedFont] = useState('Inter');
 
-  const {setStoreWord, searchWord, storeMeaning, showError, storeWord} = useDictionary();
+
+  const {setStoreWord, searchWord, storeMeaning, showError, storeWord, showLoading} = useDictionary();
 
   return (
-    <MainContext.Provider value={{setStoreWord, searchWord, storeMeaning, showError, storeWord, audioIcon, searchIcon, arrowDown, sun, moon}}>
+    <MainContext.Provider value={{setStoreWord, searchWord, storeMeaning, showError, showLoading, storeWord, audioIcon, searchIcon, arrowDown, sun, moon, selectedFont, setSelectedFont}}>
       <ThemeContext.Provider value={{theme, setTheme}}>
-        <div className="app" id={theme}>
-          <Header />
-          <SearchBar />
-          <DictionaryResult />
+        <div className={`app ${theme} ${selectedFont}`}>
+          <div className="main__container">
+            <Header />
+            <SearchBar />
+            <DictionaryResult />
+          </div>
         </div>
       </ThemeContext.Provider>
     </MainContext.Provider>

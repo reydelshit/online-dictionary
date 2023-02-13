@@ -4,16 +4,15 @@ import { ThemeContext } from '../context/ThemeContext';
 
 const Header = () => {
 
-  const selectFonts = ['Sans Serif', 'Serif', 'Mono'];
-  const [selectedFont, setSelectedFont] = useState('Sans Serif');
+  const selectFonts = ['Inter', 'Roboto', 'Zeyada'];
   const [openSelection, setOpenSelection] = useState(false)
 
-  const {arrowDown, moon, sun} = useContext(MainContext);
+  const {selectedFont, setSelectedFont, arrowDown, moon, sun} = useContext(MainContext);
 
   const {theme, setTheme} = useContext(ThemeContext)
 
   const toggleTheme = () => {
-    setTheme((current) => current === "light" ? "darl" : "light")
+    setTheme((current) => current === "light" ? "dark" : "light")
   }
 
   return (
