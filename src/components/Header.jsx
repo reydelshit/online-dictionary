@@ -6,7 +6,7 @@ const Header = () => {
 
   const selectFonts = ['Inter', 'Roboto', 'Zeyada'];
   const [openSelection, setOpenSelection] = useState(false)
-  const {selectedFont, setSelectedFont, arrowDown, moon, sun} = useContext(MainContext);
+  const {selectedFont, setSelectedFont, arrowDown, moon, sun, book} = useContext(MainContext);
   const {theme, setTheme} = useContext(ThemeContext)
 
   const toggleTheme = () => {
@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header>
       <div className='header__container'>
-        <h1>Logo</h1>
+        <img src={book} alt="book" />
         <div className='leftside__navigation'>
           <div className='selectFonts__button' onClick={() => setOpenSelection(!openSelection)}>{selectedFont} <img src={arrowDown} alt="arrow" /></div>
           {openSelection && 

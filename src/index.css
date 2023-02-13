@@ -32,13 +32,20 @@
 }
 
 .dark{
-  background-color: #242424; 
+  background-color: black; 
   color: #F4F4F4;
 }
 
 .dark .default__error, .default__result, .dictionary__result__header, .meaning__container, .selectFonts__container{
   color: #242424;
 }
+
+/* .dark .search__input__container input, .default__error, .default__result{
+  background-color: #f4f4f4e1;
+
+  border: 1px solid green;
+
+} */
 
 .Inter{
   font-family: var(--Inter);
@@ -81,6 +88,11 @@ header .header__container{
   align-items: center;
 
   /* border: 1px solid orange; */
+}
+
+.header__container img{
+  width: 3rem;
+  height: 100%;
 }
 
 header .header__container button{
