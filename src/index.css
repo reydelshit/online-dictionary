@@ -12,7 +12,6 @@
 
 }
 
-
 *{
   padding: 0;
   box-sizing: border-box;
@@ -22,30 +21,32 @@
 
 .app {
   min-width: 320px;
-  /* min-height: 100vh; */
-
   display: flex;
   justify-content: center;
   color: #242424;
 
-  /* border: 1px solid orange; */
 }
 
 .dark{
   background-color: black; 
   color: #F4F4F4;
+
+  /* border: 1px solid orange; */
 }
 
 .dark .default__error, .default__result, .dictionary__result__header, .meaning__container, .selectFonts__container{
   color: #242424;
 }
 
-/* .dark .search__input__container input, .default__error, .default__result{
-  background-color: #f4f4f4e1;
+.dark .meaning__container{
+  color: #F4F4F4;
+}
 
-  border: 1px solid green;
+.dark .dictionary__result__header h1{
+  color: #F4F4F4;
+}
 
-} */
+
 
 .Inter{
   font-family: var(--Inter);
@@ -66,14 +67,14 @@
 .main__container{
   display: block;
   width: 550px;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   padding: 0.5em;
 
-  /* border: 1px solid black; */
+  /* border: 1px solid yellowgreen; */
+
 
 }
-
-
 
 header{
   width: 100%;
@@ -175,11 +176,9 @@ header .selectFonts__container span:last-child{
 
   text-align: center;
   display: block;
-  /* border: 1px solid orange; */
   width: 100%;
   padding: 1rem;
   border-bottom: none;
-  /* height: 100%; */
 
   /* border: 1px solid green; */
 }
@@ -188,7 +187,6 @@ header .selectFonts__container span:last-child{
 
 
 .search__input__container{
-  /* padding: 1rem; */
 
   display: flex;
   position: relative;
@@ -229,6 +227,14 @@ header .selectFonts__container span:last-child{
 
 .search__input__container button img{
   width: 1rem;
+}
+
+.dictionary__result__container{
+
+  display: inline-block;
+  height: fit-content;
+
+  /* border: 1px solid green; */
 }
 
 
@@ -293,7 +299,12 @@ header .selectFonts__container span:last-child{
 }
 
 .meaning__container{
+  display: inline-block;
   width: 100%;
+  height: 100%;
+  /* max-height: 500px; */
+
+  /* border: 1px solid white; */
 }
 
 .meaning__container .individual__meaning{

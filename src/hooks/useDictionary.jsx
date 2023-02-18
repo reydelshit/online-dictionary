@@ -18,12 +18,16 @@ const useDictionary = () => {
           if(storeWord === null){
             setShowLoading(false)
           }
+
+          if(storeWord !== null){
             const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${storeWord}`);
             const data = await fetchData.json();
             setStoreMeaning(data);
             setShowLoading(false)
 
             console.log(data)
+          }
+
 
 
         } catch(error){

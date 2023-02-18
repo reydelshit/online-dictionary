@@ -13,18 +13,21 @@ const DictionaryResult = () => {
   
 
   return (
-    <div>
+    <>
       {showLoading && <div className='loading__screen_container'>
         <div className="spinner"></div>
         </div>}
-      {storeWord === null ? <div className='default__result'>Hi, you can search any word you want! 😁</div> : <div>
+      {storeWord === null ? <div className='default__result'>Hi, you can search any word you want! 😁</div> : 
+      <div className='dictionary__result__container'>
         {showError ? <div className='default__error'>ERROR 😡</div> : 
-        <div>
+        <>
+        {!showLoading && <>
           <Title />
           <Meaning />
-        </div>}
+          </>}
+        </>}
       </div>}
-    </div>
+    </>
 
     
   )

@@ -9,7 +9,7 @@ const Meaning = () => {
 
 
   return (
-    <div>
+    <>
         {storeMeaning && storeMeaning.slice(0, 1).map((he, index) => {
             
             return (
@@ -38,7 +38,7 @@ const Meaning = () => {
                 </div>
             )
         })}
-    </div>
+    </>
   )
 }
 
